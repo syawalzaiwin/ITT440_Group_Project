@@ -13,15 +13,24 @@ def client_handler(connection):
         currency = connection.recv(2048)
         mescur = currency.decode('utf-8')
         
-        ammount = connection.recv(2048).decode()
+        data = connection.recv(2048).decode()
+        ammount = int(data)
         
         if mescur == 'dollar':
-            money = ammount * 4
-            reply = f'{money} dollar US'
+            money = ammount * 4.41
+            reply = f'{money} Dollar US'
             
         if mescur == 'pound':
-            money = ammount * 5
-            reply = f'{money} pound UK'
+            money = ammount * 5.34
+            reply = f'{money} Pound UK'
+            
+        if mescur == 'euro':
+            money = ammount * 4.60
+            reply = f'{money} Euro'
+        
+        if mescur == 'riyal':
+            money = ammount * 1.18
+            reply = f'{money} Riyal Saudi'
         
         if mescur == 'none':
             break
