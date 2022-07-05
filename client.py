@@ -12,7 +12,7 @@ except socket.error as e:
 Response = ClientSocket.recv(2048)
 
 while True:
-    currency = input('Convert To Currency: ')
+    currency = input('Convert To Currency (dollar,pound,euro,riyal): ')
     ClientSocket.send(str.encode(currency))
     
     ammount = input('Enter Ammount: RM')

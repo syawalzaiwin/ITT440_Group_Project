@@ -18,23 +18,27 @@ def client_handler(connection):
         
         if mescur == 'dollar':
             money = ammount * 4.41
-            reply = f'{money} Dollar US'
+            rmoney = round(money, 2)
+            reply = f'{rmoney} Dollar US'
             
         if mescur == 'pound':
             money = ammount * 5.34
-            reply = f'{money} Pound UK'
+            rmoney = round(money, 2)
+            reply = f'{rmoney} Pound UK'
             
         if mescur == 'euro':
             money = ammount * 4.60
-            reply = f'{money} Euro'
+            rmoney = round(money, 2)
+            reply = f'{rmoney} Euro'
         
         if mescur == 'riyal':
             money = ammount * 1.18
-            reply = f'{money} Riyal Saudi'
+            rmoney = round(money, 2)
+            reply = f'{rmoney} Riyal Saudi'
         
         if mescur == 'none':
             break
- 
+         
         connection.send(str.encode(reply))
     connection.close()
 
