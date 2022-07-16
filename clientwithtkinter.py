@@ -8,6 +8,7 @@ root.geometry('350x200')
 host = '192.168.56.104'
 port = 8989
 
+
 ClientSocket = socket.socket()
 print('Waiting for connection')
 try:
@@ -16,9 +17,10 @@ except socket.error as e:
     print(str(e))
 Response = ClientSocket.recv(2048)
 
+
 while True:
 
-    lbl1 = Label(root, text = "Convert To Currency (dollar,pound,euro,riyal): ")
+    lbl1 = Label(root, text = "Convert To Currency (dollar,pound,euro,riyal,australian dollar): ")
     lbl1.grid()
 
     txt1 = Entry(root, width=10)
