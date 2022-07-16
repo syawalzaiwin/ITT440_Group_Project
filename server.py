@@ -36,11 +36,16 @@ def client_handler(connection):
             rmoney = round(money, 2)
             reply = f'{rmoney} Riyal Saudi'
         
+        if mescur == 'australian dollar':
+            money = ammount * 3.02
+            rmoney = round(money, 2)
+            reply = f'{rmoney] AUD'
+        
         if mescur == 'none':
             break
          
         connection.send(str.encode(reply))
-    connection.close()
+        connection.close()
 
 def accept_connections(ServerSocket):
     Client, address = ServerSocket.accept()
